@@ -1,19 +1,19 @@
 import { useField } from "formik"
 import React from "react"
+import '../styles/radio-checkbox.scss'
 
 const Radio = ({ label, description, name, index, type }) => {
   const [field] = useField({ name, type, value: label })
 
   return (
-    <div className="form-check">
+    <div className="form-check radio-item">
       <input
-        className="form-check-input"
         {...field}
         type={type}
         id={`${name}-radio-${index}`}
         aria-describedby={`${name}-radio-${index}-description`}
       />
-      <label className="form-check-label" htmlFor={`${name}-radio-${index}`}>
+      <label className="radio-label form-check-label" htmlFor={`${name}-radio-${index}`}>
         {label}
       </label>
       <div className="help-block" id={`${name}-radio-${index}-description`}>

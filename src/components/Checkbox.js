@@ -1,10 +1,12 @@
 import { useField } from "formik"
 import React from "react"
+import '../styles/radio-checkbox.scss'
+
 
 const Checkbox = ({ label, description, name, index, type }) => {
   const [field] = useField({ value: label, name, type })
   return (
-    <div className="form-check">
+    <div className="form-check check-item">
       <input
         className="form-check-input"
         type={type}
